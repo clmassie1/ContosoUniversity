@@ -4,6 +4,8 @@ This is a fictional website Contoso University. It includes functionality such a
 
 ### Get It Running
 
+After Cloning Repo Run..
+
 ```
 dotnet restore
 ```
