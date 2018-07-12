@@ -9,7 +9,7 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>Last Name</th>
@@ -17,7 +17,7 @@
             <th>Hire Date</th>
             <th>Office</th>
             <th>Courses</th>
-            <th></th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -67,9 +67,9 @@
 @if (Model.Instructor.Courses != null)
 {
     <h3>Courses Taught by Selected Instructor</h3>
-    <table class="table">
+    <table class="table table-bordered">
         <tr>
-            <th></th>
+            <th>Select</th>
             <th>Number</th>
             <th>Title</th>
             <th>Department</th>
@@ -107,9 +107,9 @@
 <h3>
     Students Enrolled in Selected Course
 </h3>
-<table class="table">
+<table class="table table-bordered">
     <tr>
-        <th>Name</th>
+        <th>Name</th>   
         <th>Grade</th>
     </tr>
     @foreach (var item in Model.Instructor.Enrollments)
