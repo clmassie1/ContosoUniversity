@@ -7,14 +7,18 @@
 
 <h2>Index</h2>
 <p>
-    <a asp-page="Create">Create New</a>
+    <a class="btn btn-info" asp-page="Create">Create New</a>
 </p>
-<form asp-page="./Index" method="get">
+
+
+<form class="form-inline mr-auto" asp-page="./Index" method="get">
     <div class="form-actions no-color">
+        <!-- Search form -->
+
         <p>
-            Find by name: <input type="text" name="SearchString" value="@Model.CurrentFilter" />
-            <input type="submit" value="Search" class="btn btn-default" /> |
-            <a asp-page="./Index">Back to full List</a>
+            Find by name: <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="SearchString" value="@Model.CurrentFilter" />
+            <input class="btn btn-info btn-rounded btn-sm my-0" type="submit" value="Search" /> 
+            <a class="btn btn-info" asp-page="./Index">Back to full List</a>
         </p>
     </div>
 </form>
@@ -53,9 +57,9 @@
                         @Html.DisplayFor(modelItem => item.EnrollmentDate)
                     </td>
                     <td>
-                        <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                        <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                        <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                        <a class="btn btn-info" asp-page="./Edit" asp-route-id="@item.ID">Edit</a> 
+                        <a class="btn btn-info" asp-page="./Details" asp-route-id="@item.ID">Details</a> 
+                        <a class="btn btn-info" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
                     </td>
                 </tr>
             }
@@ -70,13 +74,13 @@
        asp-route-sortOrder="@Model.CurrentSort"
        asp-route-pageIndex="@(Model.Student.PageIndex - 1)"
        asp-route-currentFilter="@Model.CurrentFilter"
-       class="btn btn-default @prevDisabled">
+       class="btn btn-info @prevDisabled">
         Previous
     </a>
     <a asp-page="./Index"
        asp-route-sortOrder="@Model.CurrentSort"
        asp-route-pageIndex="@(Model.Student.PageIndex + 1)"
        asp-route-currentFilter="@Model.CurrentFilter"
-       class="btn btn-default @nextDisabled">
+      class="btn btn-info @nextDisabled">
         Next
     </a>
